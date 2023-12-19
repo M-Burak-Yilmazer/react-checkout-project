@@ -8,7 +8,7 @@ const CardTotal = () => {
   
   
   return (
-    <table className="table w-100">
+    <table className="table w-100 text-light">
       <tbody>
         <tr className="text-end">
           <th className="text-start">Subtotal</th>
