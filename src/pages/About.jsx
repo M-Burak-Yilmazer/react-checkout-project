@@ -9,7 +9,7 @@ const About = () => {
             <div className="text-center">
               <img
                 src="https://avatars.githubusercontent.com/u/93030628?v=4"
-                width={100}
+                width="100"
                 className="rounded-circle"
                 alt="a"
               />
