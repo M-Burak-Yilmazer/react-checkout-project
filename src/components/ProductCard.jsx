@@ -2,6 +2,16 @@ import React, { useState } from "react";
 
 const ProductCard = ({ name, id, image, price, dampingRate, amount }) => {
   const [quantity, setAmount] = useState(Number(amount));
+
+const handleRemove = async () => {
+  try {
+    await axios.delete(`${}`)
+  } catch (error) {
+    
+  }
+}
+
+
   return (
     <div>
       <div key={id} className="card shadow-lg mb-3">
@@ -24,10 +34,10 @@ const ProductCard = ({ name, id, image, price, dampingRate, amount }) => {
                 <p className="text-warning h2">
                   $
                   <span className="damping-price">
-                    {(((100 - dampingRate) * price) / 100).toFixed(2)}
+                    {((100 - dampingRate) * price) / 100}
                   </span>
                   <span className="h5 text-dark text-decoration-line-through">
-                    {price.toFixed(2)}
+                    {price}
                   </span>
                 </p>
               </div>
@@ -55,7 +65,7 @@ const ProductCard = ({ name, id, image, price, dampingRate, amount }) => {
                 </div>
               </div>
               <div className="product-removal mt-4">
-                <button className="btn btn-danger btn-sm w-100 remove-product">
+                <button onClick={()=>handleRemove(id)} className="btn btn-danger btn-sm w-100 remove-product">
                   <i className="fa-solid fa-trash-can me-2"></i>Remove
                 </button>
               </div>
