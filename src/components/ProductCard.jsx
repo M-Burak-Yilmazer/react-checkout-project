@@ -33,7 +33,7 @@ const ProductCard = ({
     } catch (error) {
       console.log(error);
     }
-    // getProduct();
+    getProduct();
   };
   const quantityMinus = async (id) => {
     try {
@@ -48,7 +48,7 @@ const ProductCard = ({
     } catch (error) {
       console.log(error);
     }
-    // getProduct();
+    getProduct();
   };
 
   return (
@@ -74,7 +74,7 @@ const ProductCard = ({
                   <span className="damping-price">
                     $
                     {(
-                      Number(price) +
+                      Number(price) -
                       Number(price) * Number(dampingRate)
                     ).toFixed(2)}
                   </span>
@@ -122,7 +122,7 @@ const ProductCard = ({
                 Product Total: $
                 <span className="product-line-price">
                   {(Number(quantity) *
-                    (Number(price) + Number(price) * Number(dampingRate))).toFixed(2)}
+                    (Number(price) - Number(price) * Number(dampingRate))).toFixed(2)}
                 </span>
               </div>
             </div>
