@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const ProductForm = ({ getProduct }) => {
+const ProductForm = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -29,7 +29,6 @@ const ProductForm = ({ getProduct }) => {
     } catch (error) {
       console.log(error);
     }
-    getProduct();
   };
 
   return (

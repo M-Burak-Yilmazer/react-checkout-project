@@ -43,7 +43,11 @@ const ProductList = () => {
       <div className="container mt-3">
         <article id="product-panel" className="col-md-5">
           {product.map((products) => (
-            <ProductCard key={products.id} {...products} />
+            <ProductCard
+              key={products.id}
+              {...products}
+              getProduct={getProduct}
+            />
           ))}
         </article>
         <article className="col-md-5 m-3">

@@ -1,16 +1,55 @@
+import axios from "axios";
 import React, { useState } from "react";
 
-const ProductCard = ({ name, id, image, price, dampingRate, amount }) => {
+const ProductCard = ({
+  getProduct,
+  name,
+  id,
+  image,
+  price,
+  dampingRate,
+  amount,
+}) => {
   const [quantity, setAmount] = useState(Number(amount));
 
-const handleRemove = async () => {
-  try {
-    await axios.delete(`${}`)
-  } catch (error) {
-    
-  }
-}
-
+  const handleRemove = async () => {
+    try {
+      await axios.delete(`${process.env.REACT_APP_URL}${id}/`);
+    } catch (error) {
+      console.log(error);
+    }
+    getProduct();
+  };
+  const quantityPlus = async (id) => {
+    try {
+      await axios.put(`${process.env.REACT_APP_URL}${id}/`, {
+        name,
+        id,
+        image,
+        price,
+        dampingRate,
+        amount: Number(amount) + 1,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    // getProduct();
+  };
+  const quantityMinus = async (id) => {
+    try {
+      await axios.put(`${process.env.REACT_APP_URL}${id}/`, {
+        name,
+        id,
+        image,
+        price,
+        dampingRate,
+        amount: Number(amount) - 1,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    // getProduct();
+  };
 
   return (
     <div>
@@ -45,7 +84,8 @@ const handleRemove = async () => {
                 <div className="quantity-controller">
                   <button
                     onClick={() => {
-                      setAmount(quantity - 1);
+                      quantityMinus(id);
+                      setAmount(Number(quantity) - 1);
                     }}
                     className="btn btn-secondary btn-sm"
                   >
@@ -56,7 +96,8 @@ const handleRemove = async () => {
                   </p>
                   <button
                     onClick={() => {
-                      setAmount(quantity + 1);
+                      quantityPlus(id);
+                      setAmount(Number(quantity) + 1);
                     }}
                     className="btn btn-secondary btn-sm"
                   >
@@ -65,7 +106,12 @@ const handleRemove = async () => {
                 </div>
               </div>
               <div className="product-removal mt-4">
-                <button onClick={()=>handleRemove(id)} className="btn btn-danger btn-sm w-100 remove-product">
+                <button
+                  onClick={() => {
+                    handleRemove(id);
+                  }}
+                  className="btn btn-danger btn-sm w-100 remove-product"
+                >
                   <i className="fa-solid fa-trash-can me-2"></i>Remove
                 </button>
               </div>
