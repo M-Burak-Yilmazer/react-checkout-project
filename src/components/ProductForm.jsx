@@ -1,15 +1,35 @@
+import axios from "axios";
 import { useState } from "react";
 
-const ProductForm = () => {
+const ProductForm = ({ getProduct }) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [image, setImage] = useState("");
 
-  console.log(name, price, quantity, image);
-  
   const handleSave = (e) => {
     e.preventDefault();
+    const newProduct = {
+      name,
+      price,
+      amount: quantity,
+      image,
+      dampingRate: 15,
+    };
+    postProduct(newProduct);
+    setImage("");
+    setName("");
+    setPrice("");
+    setQuantity("");
+  };
+  const postProduct = async (newProduct) => {
+    try {
+      const res = await axios.post(process.env.REACT_APP_URL, newProduct);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+    getProduct();
   };
 
   return (
@@ -30,6 +50,7 @@ const ProductForm = () => {
             type="text"
             className="form-control"
             id="add-name"
+            value={name}
             required
           />
         </div>
@@ -42,6 +63,7 @@ const ProductForm = () => {
             type="number"
             className="form-control"
             id="add-price"
+            value={price}
             required
           />
         </div>
@@ -54,6 +76,8 @@ const ProductForm = () => {
             type="number"
             className="form-control"
             id="add-quantity"
+            value={quantity}
+            min={1}
             required
           />
         </div>
@@ -70,6 +94,7 @@ const ProductForm = () => {
             className="form-control"
             id="add-image"
             aria-describedby="basic-addon3"
+            value={image}
             required
           />
         </div>

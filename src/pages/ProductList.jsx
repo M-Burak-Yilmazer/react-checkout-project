@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import CardTotal from "../components/CardTotal";
-import axios from "axios";
 
-const ProductList = () => {
-  const [product, setProduct] = useState([]);
-
-  const getProduct = () => {
-    axios(process.env.REACT_APP_URL)
-      .then((res) => setProduct(res.data))
-      .catch((err) => console.log(err));
-  };
-  useEffect(() => {
-    getProduct();
-  }, []);
-  console.log(product);
-
+const ProductList = ({ product }) => {
   return (
     <div className="container mt-3">
       <div className=" d-sm-block d-md-flex">
@@ -23,7 +10,9 @@ const ProductList = () => {
 
         <>
           <article id="product-panel" className="col-md-5">
-            <ProductCard product={product} />
+            {product.map((products) => (
+              <ProductCard key={products.id} {...products} />
+            ))}
           </article>
           <article className="col-md-5 m-3">
             <CardTotal />

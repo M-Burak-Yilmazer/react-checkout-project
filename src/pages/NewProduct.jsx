@@ -2,10 +2,10 @@ import React from "react";
 
 import ProductForm from "../components/ProductForm";
 
-const NewProduct = () => {
+const NewProduct = ({ getProduct }) => {
   return (
     <div className="container ">
-      <ProductForm />
+      <ProductForm getProduct={getProduct} />
     </div>
   );
 };
