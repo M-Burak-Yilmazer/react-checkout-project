@@ -8,17 +8,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [product, setProduct] = useState([]);
-
-  const getProduct = () => {
-    axios(process.env.REACT_APP_URL)
-      .then((res) => setProduct(res.data))
-      .catch((err) => console.log(err));
-  };
-  useEffect(() => {
-    getProduct();
-  }, []);
-  console.log(product);
+  
   return (
     <div className=" app">
       <Navbar />
@@ -27,11 +17,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route
           path="/newproduct"
-          element={<NewProduct getProduct={getProduct} />}
+          element={<NewProduct/>}
         />
         <Route
           path="/productlist"
-          element={<ProductList product={product} />}
+          element={<ProductList  />}
         />
       </Routes>
     </div>
