@@ -14,7 +14,7 @@ const ProductForm = () => {
       price,
       amount: quantity,
       image,
-      dampingRate: 15,
+      dampingRate: 0.2,
     };
     postProduct(newProduct);
     setImage("");

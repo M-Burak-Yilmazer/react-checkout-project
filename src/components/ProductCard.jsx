@@ -71,12 +71,15 @@ const ProductCard = ({
               </h5>
               <div className="product-price">
                 <p className="text-warning h2">
-                  $
                   <span className="damping-price">
-                    {((100 - dampingRate) * price) / 100}
+                    $
+                    {(
+                      Number(price) +
+                      Number(price) * Number(dampingRate)
+                    ).toFixed(2)}
                   </span>
-                  <span className="h5 text-dark text-decoration-line-through">
-                    {price}
+                  <span className="h5 ms-2 text-dark text-decoration-line-through">
+                    ${Number(price).toFixed(2)}
                   </span>
                 </p>
               </div>
@@ -117,7 +120,10 @@ const ProductCard = ({
               </div>
               <div className="mt-2">
                 Product Total: $
-                <span className="product-line-price">Total</span>
+                <span className="product-line-price">
+                  {(Number(quantity) *
+                    (Number(price) + Number(price) * Number(dampingRate))).toFixed(2)}
+                </span>
               </div>
             </div>
           </div>
