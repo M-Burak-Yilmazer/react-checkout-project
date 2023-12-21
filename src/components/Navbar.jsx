@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg  bg-secondary bg-opacity-75 bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg  bg-secondary bg-opacity-75 bg-body-tertiary navstyle">
       <div className="container-fluid">
         <NavLink  className="navbar-brand text-white" to="/">
           Shopping Cart
