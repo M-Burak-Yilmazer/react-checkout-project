@@ -1,29 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg  bg-secondary bg-opacity-75 bg-body-tertiary navstyle">
-      <div className="container-fluid">
-        <NavLink  className="navbar-brand text-white" to="/">
-          Shopping Cart
-        </NavLink>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div
-          className="collapse w-full text-end navbar-collapse"
-          id="navbarNav"
-        >
-          <ul className="navbar-nav">
+    <nav id="navstyle" className="nav  align-items-center">
+      <div className="container-fluid d-flex justify-content-start align-items-center">
+        <div>
+          <Link id="navTitle" className="navbar-brand  " to="/">
+            TOYS'LAND
+          </Link>
+        </div>
+
+        <div>
+          <ul
+            className="d-flex flex-column flex-sm-row "
+            style={{ listStyle: "none" }}
+          >
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
                 Home
@@ -31,12 +23,12 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/newproduct">
-                New Product
+                New-Toy
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/productlist">
-                Product List
+                Toys-List
               </NavLink>
             </li>
             <li className="nav-item">

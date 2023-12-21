@@ -6,19 +6,24 @@ const Main = () => {
   return (
     <main className="main">
       <div>
-        <h1>Welcome to Shopping Cart Application</h1>
+        <h1
+          style={{ color: "#ff006e", fontFamily: "Grinch", fontSize: "3rem" }}
+        >
+          {" "}
+          Welcome to Toys'Land
+        </h1>
         <div className="main-buttons">
           <button
             className="btn btn-outline-primary px-4"
             onClick={() => navigate("newproduct")}
           >
-            Add New Product
+            Add New Toy
           </button>
           <button
             onClick={() => navigate("productlist")}
             className="btn btn-primary px-4 ms-3"
           >
-            See Products
+            See Toys-Shop
           </button>
         </div>
       </div>

@@ -15,7 +15,10 @@ const CardTotal = ({ product }) => {
 
 
   return (
-    <table className="table w-100 text-light">
+    <table
+      style={{ color: "#ff006e" ,}}
+      className="table table-danger  table-striped w-100 "
+    >
       <tbody>
         <tr className="text-end">
           <th className="text-start">Subtotal</th>

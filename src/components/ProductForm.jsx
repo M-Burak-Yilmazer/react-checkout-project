@@ -44,7 +44,7 @@ const ProductForm = ({ getProducts }) => {
       bg-opacity-50 bg-light
       "
     >
-      <h1 className="text-center text-light">New Product</h1>
+      <h1 style={{color:"#ff006e"}} className="text-center ">New Toy Item 🧸</h1>
       <form onSubmit={handleSave} className="p-2">
         <div className="mb-3">
           <label htmlFor="add-name" className="form-label">
@@ -105,7 +105,7 @@ const ProductForm = ({ getProducts }) => {
         </div>
         <div className="text-center">
           <button type="submit" className="add-to-cart btn btn-success btn-sm">
-            <i className="fa-solid fa-cart-plus me-2"></i>Save To Product
+            🎁 Save To Toys
           </button>
         </div>
       </form>

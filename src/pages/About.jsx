@@ -1,4 +1,5 @@
 import React from "react";
+import img1 from "../assets/gepetto.png"
 
 const About = () => {
   return (
@@ -7,26 +8,21 @@ const About = () => {
         <div className="col-md-7">
           <div className="card p-3 py-4">
             <div className="text-center">
-              <img
-                src="https://avatars.githubusercontent.com/u/93030628?v=4"
-                width="100"
-                className="rounded-circle"
-                alt="a"
-              />
+              <img src={img1} width="100" className="rounded-circle" alt="a" />
             </div>
             <div className="text-center mt-3">
-              <span className="bg-secondary p-1 px-4 rounded text-white">
-                Pro
-              </span>
-              <h5 className="mt-2 mb-0">Anthony Harold</h5>
-              <span>Fullstack Developer</span>
+              <h5 className="mt-2 mb-0">Mister Geppetto</h5>
+              <span> Carpenter</span>
               <div className="px-4 mt-1">
                 <p className="fonts">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-                  voluptatem dolore sint quo assumenda eum voluptate aut, sequi
-                  rem cumque facilis asperiores possimus porro, facere eveniet!
-                  Tempora non cupiditate in quis adipisci. Distinctio, deleniti
-                  dolores?
+                  Geppetto 
+                  also known as Mister Geppetto, is an Italian fictional
+                  character in the 1883 novel The Adventures of Pinocchio by
+                  Carlo Collodi. Geppetto is an elderly, impoverished woodcarver
+                  and the creator (and thus 'father') of Pinocchio. He wears a
+                  yellow wig resembling cornmeal mush (called polendina), and
+                  consequently his neighbors call him "Polendina" to annoy him.
+                  
                 </p>
               </div>
               <ul className="social-list">
@@ -51,7 +47,8 @@ const About = () => {
                   <a
                     className="text-decoration-none text-black "
                     href="https://github.com/anthonyharold67"
-                    target="true">
+                    target="true"
+                  >
                     Message
                   </a>
                 </button>
@@ -59,7 +56,8 @@ const About = () => {
                   <a
                     className="text-decoration-none text-white"
                     href="https://github.com/anthonyharold67"
-                    target="true">
+                    target="true"
+                  >
                     Contact
                   </a>
                 </button>
