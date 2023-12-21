@@ -5,7 +5,9 @@ const UpdateForm = ({ formData, handleChange, handleSubmit, text }) => {
       className=" mb-4 mt-4 col col-lg-6 mx-auto border rounded-2
       bg-opacity-50 bg-light"
     >
-      <h1 className="text-center text-light">Update Product</h1>
+      <h1 style={{ color: "#ff006e" }} className="text-center mt-1">
+        Update Toy Item
+      </h1>
       <form class="p-2" onSubmit={handleSubmit}>
         <div class="mb-3">
           <label for="add-name" class="form-label">
@@ -69,7 +71,7 @@ const UpdateForm = ({ formData, handleChange, handleSubmit, text }) => {
         </div>
         <div class="text-center">
           <button type="submit" class="add-to-cart btn btn-success btn-sm">
-            <i class="fa-solid fa-cart-plus me-2"></i>Save To {text} Product
+            <i class="fa-solid fa-cart-plus me-2"></i>Save To Toys
           </button>
         </div>
       </form>
