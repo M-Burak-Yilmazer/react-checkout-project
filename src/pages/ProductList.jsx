@@ -5,7 +5,6 @@ import axios from "axios";
 import load from "../assets/loading.gif";
 
 const ProductList = () => {
-
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
 
@@ -59,11 +58,11 @@ const ProductList = () => {
   return (
     <div className="container mt-3">
       <div
-        className={product.length > 0 ? " d-sm-block d-md-flex" : "bg-light"}
+        className={product.length > 0 ? " d-sm-block d-md-flex" : ""}
       >
         {loading ? (
-          <div className="container mt-3 text-center">
-            <img src={load} alt="loading" className="w-100" />
+          <div className=" container mt-3 text-center">
+            <img src={load} alt="loading" className="" />
           </div>
         ) : product.length > 0 ? (
           <>
