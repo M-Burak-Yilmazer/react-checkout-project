@@ -44,22 +44,24 @@ const ProductList = () => {
   };
 
   const quantityMinus = async (item) => {
-    try {
-      await axios.put(`${process.env.REACT_APP_URL}${item.id}/`, {
-        ...item,
-        amount: Number(item.amount) - 1,
-      });
-      getProduct();
-    } catch (error) {
-      console.log(error);
+    if (item.amount - 1 !== 0) {
+      try {
+        await axios.put(`${process.env.REACT_APP_URL}${item.id}/`, {
+          ...item,
+          amount: Number(item.amount) - 1,
+        });
+        getProduct();
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      handleRemove(item.id);
     }
   };
 
   return (
     <div className="container mt-3">
-      <div
-        className={product.length > 0 ? " d-sm-block d-md-flex" : ""}
-      >
+      <div className={product.length > 0 ? " d-sm-block d-md-flex" : ""}>
         {loading ? (
           <div className=" container mt-3 text-center">
             <img src={load} alt="loading" className="" />

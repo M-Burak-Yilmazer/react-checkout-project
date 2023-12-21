@@ -30,7 +30,11 @@ const ProductCard = ({
           </div>
           <div className="col-md-7">
             <div className="card-body">
-              <h5 className="card-title cardTitle" role="button" onClick={handleUpdate}>
+              <h5
+                className="card-title cardTitle"
+                role="button"
+                onClick={handleUpdate}
+              >
                 {name}
               </h5>
               <div className="product-price">
@@ -84,7 +88,7 @@ const ProductCard = ({
                 <span className="product-line-price">
                   {(
                     Number(amount) *
-                    (Number(price) - Number(price) * Number(dampingRate))
+                    (Number(price) * Number(dampingRate))
                   ).toFixed(2)}
                 </span>
               </div>
