@@ -6,23 +6,18 @@ import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import UpdateProduct from "./pages/UpdateProduct";
 
 function App() {
-  
   return (
     <div className=" app">
       <Navbar />
       <Routes>
         <Route path="" element={<Main />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/newproduct"
-          element={<NewProduct/>}
-        />
-        <Route
-          path="/productlist"
-          element={<ProductList  />}
-        />
+        <Route path="/newproduct" element={<NewProduct />} />
+        <Route path="/updateproduct" element={<UpdateProduct />} />
+        <Route path="/productlist" element={<ProductList />} />
       </Routes>
     </div>
   );

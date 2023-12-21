@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProductForm = () => {
+const ProductForm = ({ getProducts }) => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [image, setImage] = useState("");
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
     const newProduct = {
       name,
@@ -16,16 +18,20 @@ const ProductForm = () => {
       image,
       dampingRate: 0.8,
     };
-    postProduct(newProduct);
+    await postProduct(newProduct);
+
     setImage("");
     setName("");
     setPrice("");
     setQuantity("");
+    navigate("/productlist");
   };
   const postProduct = async (newProduct) => {
     try {
       const res = await axios.post(process.env.REACT_APP_URL, newProduct);
       console.log(res);
+      // Call getProducts only after the POST request is successful
+      getProducts();
     } catch (error) {
       console.log(error);
     }

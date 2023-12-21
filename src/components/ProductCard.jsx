@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({
   getProduct,
@@ -9,6 +10,10 @@ const ProductCard = ({
   quantityPlus,
 }) => {
   const { name, id, image, price, dampingRate, amount } = product;
+  const navigate = useNavigate();
+  const handleUpdate = () => {
+    navigate("/updateproduct", { state: product });
+  };
 
   return (
     <div>
@@ -25,14 +30,13 @@ const ProductCard = ({
           </div>
           <div className="col-md-7">
             <div className="card-body">
-              <h5 className="card-title" role="button">
+              <h5 className="card-title" role="button" onClick={handleUpdate}>
                 {name}
               </h5>
               <div className="product-price">
                 <p className="text-warning h2">
                   <span className="damping-price">
-                    $
-                    {Number(price)*Number(dampingRate).toFixed(2)}
+                    ${(Number(price) * Number(dampingRate)).toFixed(2)}
                   </span>
                   <span className="h5 ms-2 text-dark text-decoration-line-through">
                     ${Number(price).toFixed(2)}
