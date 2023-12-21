@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "../assets/gepetto.png"
+import img1 from "../assets/gepetto.png";
 
 const About = () => {
   return (
@@ -15,14 +15,13 @@ const About = () => {
               <span> Carpenter</span>
               <div className="px-4 mt-1">
                 <p className="fonts">
-                  Geppetto 
-                  also known as Mister Geppetto, is an Italian fictional
-                  character in the 1883 novel The Adventures of Pinocchio by
-                  Carlo Collodi. Geppetto is an elderly, impoverished woodcarver
-                  and the creator (and thus 'father') of Pinocchio. He wears a
-                  yellow wig resembling cornmeal mush (called polendina), and
-                  consequently his neighbors call him "Polendina" to annoy him.
-                  
+                  Geppetto also known as Mister Geppetto, is an Italian
+                  fictional character in the 1883 novel The Adventures of
+                  Pinocchio by Carlo Collodi. Geppetto is an elderly,
+                  impoverished woodcarver and the creator (and thus 'father') of
+                  Pinocchio. He wears a yellow wig resembling cornmeal mush
+                  (called polendina), and consequently his neighbors call him
+                  "Polendina" to annoy him.
                 </p>
               </div>
               <ul className="social-list">
@@ -46,7 +45,7 @@ const About = () => {
                 <button className="btn btn-outline-primary px-4">
                   <a
                     className="text-decoration-none text-black "
-                    href="https://github.com/anthonyharold67"
+                    href="https://github.com/M-Burak-Yilmazer"
                     target="true"
                   >
                     Message
@@ -55,7 +54,7 @@ const About = () => {
                 <button className="btn btn-primary px-4 ms-3">
                   <a
                     className="text-decoration-none text-white"
-                    href="https://github.com/anthonyharold67"
+                    href="https://www.linkedin.com/in/muhittin-burak-yilmazer/"
                     target="true"
                   >
                     Contact
